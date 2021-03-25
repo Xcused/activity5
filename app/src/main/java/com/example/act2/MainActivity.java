@@ -1,12 +1,15 @@
-package com.example.activity2;
+package com.example.act2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.act2.ActivityKedua;
 
 public class MainActivity extends AppCompatActivity {
     //Deklarasi variable untuk button
@@ -48,15 +51,36 @@ public class MainActivity extends AppCompatActivity {
                 Toast t = Toast.makeText(getApplicationContext(),
                         "email anda: " + nama + "dan Password anda: " + password + "", Toast.LENGTH_LONG);
 
-                String email = "zulvafad@gmail.com";
-                String pass = "zulvafad123";
+                String email = "admin@mail.com";
+                String pass = "123";
 
                 if (nama.equals(email) && password.equals(pass))
                 {
                     t = Toast.makeText(getApplicationContext(),
                             "Login sukses", Toast.LENGTH_LONG);
                     t.show();
+
+                    //Membuat objek bundle
+                    Bundle b = new Bundle();
+
+                    //memasukan value dari variable nama dengan kunci "a"
+                    //dan dimasukan kedalam bundle
+                    b.putString("a", nama.trim());
+
+                    //memasukan value dari variable nama dengan kunci "b"
+                    //dan dimasukan kedalam bundle
+                    b.putString("a", password.trim());
+
+                    //Membuat objek intent berpindah activity
+                    Intent i = new Intent (getApplicationContext(), ActivityKedua.class);
+
+                    //Masukkan bundle kedalam intent yang akan dikirimkan
+                    i.putExtras(b);
+
+                    //berpindah ke ActivityHasil
+                    startActivity(i);
                 }
+
                 else if (!nama.equals(email) && password.equals(pass))
                 {
                     t = Toast.makeText(getApplicationContext(),
