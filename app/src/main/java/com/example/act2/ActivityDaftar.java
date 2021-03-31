@@ -26,6 +26,12 @@ public class ActivityDaftar extends AppCompatActivity {
         setContentView(R.layout.activity_daftar);
 
 
+        fab=findViewById(R.id.fabSimpan);
+        edNama=findViewById(R.id.edNama);
+        edAlamat=findViewById(R.id.edAlamat);
+        edEmail=findViewById(R.id.edEmail);
+        edPassword=findViewById(R.id.edPassword);
+        edrepass=findViewById(R.id.edrepas);
         //Membuat method untuk event dari floating button
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
