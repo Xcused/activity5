@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
        //Membuat kondisi jika yang dipilih adalah id mdaftar
         if (item.getItemId()== R.id.mnDaftar) {
             //method untuk memanggil activity "Daftar Activity"
-            Intent i = new Intent(getApplicationContext(), ActivityDaftar.class);
+            Intent i = new Intent(getApplicationContext(), Home_Activity.class);
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
